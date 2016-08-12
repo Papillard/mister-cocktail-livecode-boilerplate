@@ -1,6 +1,4 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [ :show ]
-
   # GET /cocktails
   def index
     @cocktails = Cocktail.all
@@ -8,6 +6,7 @@ class CocktailsController < ApplicationController
 
   # GET /cocktails/1
   def show
+    @cocktail = Cocktail.find(params[:id])
   end
 
   # GET /cocktails/new
@@ -26,10 +25,6 @@ class CocktailsController < ApplicationController
   end
 
   private
-
-  def set_cocktail
-    @cocktail = Cocktail.find(params[:id])
-  end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def cocktail_params
