@@ -2627,3 +2627,307 @@ ORDER BY c.conname
   [1m[36mCocktail Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Last Word"], ["LIMIT", 1]]
   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Last Word"], ["created_at", 2016-08-18 09:51:50 UTC], ["updated_at", 2016-08-18 09:51:50 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-last-word.jpg"]]
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from require at /Users/boris/code/papillard/mister-cocktail-livecode-boilerplate/bin/rails:8)
+  [1m[35m (20.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4854612210769977600);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCocktails (20150820144757)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateCocktails < ActiveRecord::Migration[4.2] (called from require at /Users/boris/code/papillard/mister-cocktail-livecode-boilerplate/bin/rails:8)
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "cocktails" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20150820144757"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPictureToCocktails (20150820145700)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class AddPictureToCocktails < ActiveRecord::Migration[4.2] (called from require at /Users/boris/code/papillard/mister-cocktail-livecode-boilerplate/bin/rails:8)
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "cocktails" ADD "picture" character varying[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20150820145700"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIngredients (20150820151507)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateIngredients < ActiveRecord::Migration[4.2] (called from require at /Users/boris/code/papillard/mister-cocktail-livecode-boilerplate/bin/rails:8)
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20150820151507"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-08-18 16:09:28 UTC], ["updated_at", 2016-08-18 16:09:28 UTC]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4854612210769977600)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cocktails'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'ingredients'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from require at /Users/boris/code/papillard/mister-cocktail-livecode-boilerplate/bin/rails:8)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mCocktail Load (1.1ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "lemon"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "lemon"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "ice"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "ice"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "mint"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "mint"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "leaves"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "leaves"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "redbull"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "redbull"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "jagermeister"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "jagermeister"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "sugar"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "sugar"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "tonic"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "tonic"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "gin"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "gin"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = $1 LIMIT $2[0m  [["name", "rhum"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "rhum"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Old Fashioned"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Old Fashioned"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2014/11/20141104-cocktail-party-old-fashioneds-holiday-vicky-wasik-3.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Daiquiri"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Daiquiri"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-daiquiri.jpg"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Margarita"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Margarita"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-margarita.jpg"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Sidecar"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sidecar"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2014/11/20141101-cognac-sidecar-carey-jones.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "French 75"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "French 75"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-french75.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Bloody Mary"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bloody Mary"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/twase-20150320-21.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Irish Coffee"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Irish Coffee"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-irish-coffee.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Jack Rose"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Jack Rose"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-jack-rose.jpg"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Negroni"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Negroni"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-negroni.jpg"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Boulevardier"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Boulevardier"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-boulevardier.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Sazerac"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Sazerac"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-sazerac.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Vieux Carré"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vieux Carré"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-vieux-carre.jpg"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Ramos Gin Fizz"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ramos Gin Fizz"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-robyn-lee-ramos-gin-fizz.jpg"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Mint Julep"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mint Julep"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-mint-julep.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Whiskey Sour"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Whiskey Sour"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-whiskey-sour.jpg"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Mai Tai"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mai Tai"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-mai-tai.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Planter's Punch"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Planter's Punch"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/04/20150406-cocktails-planters-punch-robyn-lee-1.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Pisco Sour"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pisco Sour"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-pisco-sour.jpg"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Cosmopolitan"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cosmopolitan"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-cosmopolitan.jpg"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Tom Collins"], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tom Collins"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-tom-collins.jpg"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCocktail Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cocktails" WHERE "cocktails"."name" = $1 LIMIT $2[0m  [["name", "Last Word"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "cocktails" ("name", "created_at", "updated_at", "picture") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Last Word"], ["created_at", 2016-08-18 16:09:36 UTC], ["updated_at", 2016-08-18 16:09:36 UTC], ["picture", "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-last-word.jpg"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block in _load_from at config/puma.rb:14)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block in _load_from at config/puma.rb:14)
+Started GET "/" for ::1 at 2016-08-18 17:10:34 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (1.9ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  Rendered cocktails/index.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 14519ms (Views: 14482.5ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/cocktails/1" for ::1 at 2016-08-18 17:11:10 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCocktail Load (3.3ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  Rendered cocktails/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 288ms (Views: 232.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/cocktails" for ::1 at 2016-08-18 17:11:13 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (0.8ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  Rendered cocktails/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 170ms (Views: 164.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cocktails/new" for ::1 at 2016-08-18 17:11:14 +0100
+Processing by CocktailsController#new as HTML
+  Rendering cocktails/new.html.erb within layouts/application
+  Rendered cocktails/_form.html.erb (185.6ms)
+  Rendered cocktails/new.html.erb within layouts/application (191.0ms)
+Completed 200 OK in 475ms (Views: 466.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cocktails" for ::1 at 2016-08-18 17:11:20 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (0.7ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  Rendered cocktails/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 164ms (Views: 160.3ms | ActiveRecord: 0.7ms)
+
+
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from raise_in_transactional_callbacks= at /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/transactions.rb:283)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from require at /Users/boris/code/papillard/mister-cocktail-livecode-boilerplate/bin/rails:8)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4854612210769977600);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateDoses (20160818161427)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "doses" ("id" serial primary key, "description" character varying, "cocktail_id" integer, "ingredient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_48b6f209c2"
+FOREIGN KEY ("cocktail_id")
+  REFERENCES "cocktails" ("id")
+, CONSTRAINT "fk_rails_961afcf26a"
+FOREIGN KEY ("ingredient_id")
+  REFERENCES "ingredients" ("id")
+)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_doses_on_cocktail_id" ON "doses"  ("cocktail_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_doses_on_ingredient_id" ON "doses"  ("ingredient_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20160818161427"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4854612210769977600)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'cocktails'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'doses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'ingredients'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mCocktail Load (1.5ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" ORDER BY "cocktails"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCocktail Load (0.6ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" ORDER BY "cocktails"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (2.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" ORDER BY "ingredients"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mDose Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" IS NULL AND "doses"."cocktail_id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mDose Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" = $1 AND "doses"."cocktail_id" IS NULL LIMIT $2[0m  [["ingredient_id", 1], ["LIMIT", 1]]
+  [1m[36mDose Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" = $1 AND "doses"."cocktail_id" = $2 LIMIT $3[0m  [["ingredient_id", 1], ["cocktail_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDose Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" = $1 AND "doses"."cocktail_id" = $2 LIMIT $3[0m  [["ingredient_id", 1], ["cocktail_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "doses" ("description", "cocktail_id", "ingredient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "a lot"], ["cocktail_id", 1], ["ingredient_id", 1], ["created_at", 2016-08-18 16:21:43 UTC], ["updated_at", 2016-08-18 16:21:43 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mDose Load (1.2ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 1]]
+  [1m[36mDose Load (0.3ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."ingredient_id" = $1[0m  [["ingredient_id", 1]]
+  [1m[36mDose Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" = $1 AND "doses"."cocktail_id" = $2 LIMIT $3[0m  [["ingredient_id", 1], ["cocktail_id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "doses" ON "ingredients"."id" = "doses"."ingredient_id" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 1]]
