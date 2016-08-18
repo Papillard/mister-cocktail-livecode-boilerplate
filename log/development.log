@@ -2931,3 +2931,722 @@ ORDER BY c.conname
   [1m[36mDose Load (0.3ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."ingredient_id" = $1[0m  [["ingredient_id", 1]]
   [1m[36mDose Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" = $1 AND "doses"."cocktail_id" = $2 LIMIT $3[0m  [["ingredient_id", 1], ["cocktail_id", 1], ["LIMIT", 1]]
   [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" INNER JOIN "doses" ON "ingredients"."id" = "doses"."ingredient_id" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 1]]
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block in _load_from at config/puma.rb:14)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block in _load_from at config/puma.rb:14)
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:33:08 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (0.9ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (227.2ms)
+Completed 200 OK in 1234ms (Views: 1011.3ms | ActiveRecord: 51.6ms)
+
+
+Started GET "/assets/application.self-b8956bb6911355a06ada1d7a4570efabe807416009b185e47d51b483c388e264.css?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for ::1 at 2016-08-18 17:33:10 +0100
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-18 17:33:11 +0100
+Started GET "/assets/cocktails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:33:11 +0100
+Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:33:11 +0100
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for ::1 at 2016-08-18 17:33:11 +0100
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-18 17:33:11 +0100
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:33:11 +0100
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-18 17:33:11 +0100
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-18 17:33:11 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (2.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (8.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (9.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:33:46 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (4.0ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (264.4ms)
+Completed 200 OK in 1381ms (Views: 858.7ms | ActiveRecord: 35.3ms)
+
+
+Started GET "/assets/application.self-b8956bb6911355a06ada1d7a4570efabe807416009b185e47d51b483c388e264.css?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for ::1 at 2016-08-18 17:33:48 +0100
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for ::1 at 2016-08-18 17:33:49 +0100
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for ::1 at 2016-08-18 17:33:49 +0100
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for ::1 at 2016-08-18 17:33:49 +0100
+Started GET "/assets/cocktails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:33:49 +0100
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-18 17:33:49 +0100
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:33:49 +0100
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-18 17:33:49 +0100
+Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:33:49 +0100
+Started POST "/cocktails/2/doses" for ::1 at 2016-08-18 17:34:42 +0100
+Processing by DosesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oKOpvJlnKI6qkEnLStcwDdSrZU2+FTxDlwmx6ZGQCYhzMWyPsPT6iDxh7RMIfgdIZ22Uh+hQTuDbxhN6xm8W/Q==", "dose"=>{"description"=>"10 cl", "ingredient_id"=>"Ingredient Rhum"}, "commit"=>"Add dose", "cocktail_id"=>"2"}
+  [1m[36mCocktail Load (0.5ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 7.9ms)
+
+
+  
+RuntimeError ():
+  
+app/controllers/doses_controller.rb:4:in `create'
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (126.4ms)
+Started PUT "/__web_console/repl_sessions/31883d93acf6d81f7e202dabadc46dc9" for ::1 at 2016-08-18 17:34:49 +0100
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:35:36 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (1.4ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (45.3ms)
+Completed 200 OK in 286ms (Views: 227.0ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/assets/application.self-b8956bb6911355a06ada1d7a4570efabe807416009b185e47d51b483c388e264.css?body=1" for ::1 at 2016-08-18 17:35:36 +0100
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/cocktails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-18 17:35:37 +0100
+Started POST "/cocktails/2/doses" for ::1 at 2016-08-18 17:35:53 +0100
+Processing by DosesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3D0szkteIWQwXl/NAj/afm7r9LO+LLhs6Qzng1HDeXoPr+n9Ys3zYqav+xVAlu073S0Feehpys+lw0UQBjxmDw==", "dose"=>{"description"=>"10 cl", "ingredient_id"=>"10"}, "commit"=>"Add dose", "cocktail_id"=>"2"}
+  [1m[36mCocktail Load (9.8ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 25.0ms)
+
+
+  
+RuntimeError ():
+  
+app/controllers/doses_controller.rb:4:in `create'
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.9ms)
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (351.0ms)
+Started PUT "/__web_console/repl_sessions/9b765717a7c8ddab682bc82d318b647b" for ::1 at 2016-08-18 17:35:58 +0100
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:39:15 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (0.6ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 248ms (Views: 178.5ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/assets/application.self-b8956bb6911355a06ada1d7a4570efabe807416009b185e47d51b483c388e264.css?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/cocktails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-18 17:39:15 +0100
+Started POST "/cocktails/2/doses" for ::1 at 2016-08-18 17:39:21 +0100
+Processing by DosesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iZGMdRec1Pu+WLR6kxGRAsxHDA+YWHkKTiYPjUVx+qRaA0lGPg8G/SipEKLRuKZHf4H9xc4dC6kC6a0eEo7l0Q==", "dose"=>{"description"=>"10 cl", "ingredient_id"=>"10"}, "commit"=>"Add dose", "cocktail_id"=>"2"}
+  [1m[36mCocktail Load (3.0ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mDose Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" = $1 AND "doses"."cocktail_id" = $2 LIMIT $3[0m  [["ingredient_id", 10], ["cocktail_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[32mINSERT INTO "doses" ("description", "cocktail_id", "ingredient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "10 cl"], ["cocktail_id", 2], ["ingredient_id", 10], ["created_at", 2016-08-18 16:39:22 UTC], ["updated_at", 2016-08-18 16:39:22 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cocktails/2
+Completed 302 Found in 196ms (ActiveRecord: 12.9ms)
+
+
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:39:22 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (5.0ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mIngredient Load (2.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (47.6ms)
+Completed 200 OK in 275ms (Views: 253.7ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:41:38 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (0.4ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (2.2ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 2]]
+  [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (94.3ms)
+Completed 200 OK in 335ms (Views: 239.3ms | ActiveRecord: 25.4ms)
+
+
+Started GET "/assets/application.self-b8956bb6911355a06ada1d7a4570efabe807416009b185e47d51b483c388e264.css?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/cocktails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for ::1 at 2016-08-18 17:41:39 +0100
+Started POST "/cocktails/2/doses" for ::1 at 2016-08-18 17:41:58 +0100
+Processing by DosesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RacByrDNl0aXtLtSB4eg24fyTDFVlm0uP64c4yFllaOWNcT5mV5FQAFFH4pFLpeeNDS9+wPTH41zYb5wdpqK1g==", "dose"=>{"description"=>"2 spoons", "ingredient_id"=>"7"}, "commit"=>"Add dose", "cocktail_id"=>"2"}
+  [1m[36mCocktail Load (1.9ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Load (1.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mDose Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" = $1 AND "doses"."cocktail_id" = $2 LIMIT $3[0m  [["ingredient_id", 7], ["cocktail_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "doses" ("description", "cocktail_id", "ingredient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "2 spoons"], ["cocktail_id", 2], ["ingredient_id", 7], ["created_at", 2016-08-18 16:41:58 UTC], ["updated_at", 2016-08-18 16:41:58 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cocktails/2
+Completed 302 Found in 163ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:41:58 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (0.4ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (1.8ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 2]]
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (2.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (54.6ms)
+Completed 200 OK in 350ms (Views: 335.6ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/cocktails/2/doses" for ::1 at 2016-08-18 17:42:11 +0100
+Processing by DosesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Lpp2odwrL5zW3kADUWx7ES0nEOt9SuRcnW9F9KH1MEn9CLOS9bj9mkAv5NsTxUxUnuHhISsPlv/RoOdn9govPA==", "dose"=>{"description"=>"", "ingredient_id"=>""}, "commit"=>"Add dose", "cocktail_id"=>"2"}
+  [1m[36mCocktail Load (1.8ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (9.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDose Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" IS NULL AND "doses"."cocktail_id" = $1 LIMIT $2[0m  [["cocktail_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (1.4ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 2]]
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (1.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (63.1ms)
+Completed 200 OK in 414ms (Views: 302.6ms | ActiveRecord: 18.6ms)
+
+
+Started POST "/cocktails/2/doses" for ::1 at 2016-08-18 17:43:22 +0100
+Processing by DosesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dA907zwxmyPJwgr77ES+05H2Ugie2bpofsJGuve9S7qnnbHcFaJJJV8zriOu7YmWIjCjwsicyMsyDeQpoEJUzw==", "dose"=>{"description"=>"", "ingredient_id"=>""}, "commit"=>"Add dose", "cocktail_id"=>"2"}
+  [1m[36mCocktail Load (2.5ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDose Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" IS NULL AND "doses"."cocktail_id" = $1 LIMIT $2[0m  [["cocktail_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.9ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 2]]
+  [1m[36mIngredient Load (3.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (47.7ms)
+Completed 200 OK in 202ms (Views: 157.5ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/cocktails/2/doses" for ::1 at 2016-08-18 17:43:33 +0100
+Processing by DosesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"06yRztLu6cC0wTvtNzH49u7V9MfBOJuV+ql1r06G7kIAPlT9+307xiIwnzV1mM+zXRMFDZd96Ta2Ztc8GXnxNw==", "dose"=>{"description"=>"A looooootttt", "ingredient_id"=>""}, "commit"=>"Add dose", "cocktail_id"=>"2"}
+  [1m[36mCocktail Load (6.1ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDose Exists (3.1ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" IS NULL AND "doses"."cocktail_id" = $1 LIMIT $2[0m  [["cocktail_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (2.7ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 2]]
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (2.6ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (1.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (113.9ms)
+Completed 200 OK in 374ms (Views: 324.5ms | ActiveRecord: 17.2ms)
+
+
+Started POST "/cocktails/2/doses" for ::1 at 2016-08-18 17:43:45 +0100
+Processing by DosesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/5hf/T4MV3n1HBM2r4V43dbov8hZNOcKIyF/BGHLMSMsCprOF5+Ff2Ptt+7tLE+YZS5OAg9xlalv7t2XNjQuVg==", "dose"=>{"description"=>"A looooootttt", "ingredient_id"=>"1"}, "commit"=>"Add dose", "cocktail_id"=>"2"}
+  [1m[36mCocktail Load (1.1ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Load (1.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDose Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" = $1 AND "doses"."cocktail_id" = $2 LIMIT $3[0m  [["ingredient_id", 1], ["cocktail_id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "doses" ("description", "cocktail_id", "ingredient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "A looooootttt"], ["cocktail_id", 2], ["ingredient_id", 1], ["created_at", 2016-08-18 16:43:45 UTC], ["updated_at", 2016-08-18 16:43:45 UTC]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cocktails/2
+Completed 302 Found in 86ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:43:45 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (2.4ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.7ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 2]]
+  [1m[36mIngredient Load (5.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 266ms (Views: 249.1ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:47:51 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (0.6ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (1.3ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 2]]
+  [1m[36mIngredient Load (1.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (113.2ms)
+Completed 200 OK in 327ms (Views: 263.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/application.self-b8956bb6911355a06ada1d7a4570efabe807416009b185e47d51b483c388e264.css?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/cocktails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-18 17:47:52 +0100
+Started DELETE "/cocktails/2/doses/4" for ::1 at 2016-08-18 17:48:05 +0100
+Processing by DosesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"npq1ovrruo9phPdDeHi4jpQyE6F6t2yCHSJOdU/QeBVNCHCR03hoif91U5s60Y/LJ/TiayzyHiFR7ezmGC9nYA==", "cocktail_id"=>"2", "id"=>"4"}
+  [1m[36mCocktail Load (0.9ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mDose Load (1.1ms)[0m  [1m[34mSELECT  "doses".* FROM "doses" WHERE "doses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "doses" WHERE "doses"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cocktails/2
+Completed 302 Found in 74ms (ActiveRecord: 21.8ms)
+
+
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:48:05 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (0.9ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.4ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 2]]
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (79.5ms)
+Completed 200 OK in 185ms (Views: 164.5ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:52:59 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (0.5ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.4ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 2]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (2.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (76.5ms)
+Completed 200 OK in 303ms (Views: 246.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/application.self-b8956bb6911355a06ada1d7a4570efabe807416009b185e47d51b483c388e264.css?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/cocktails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-18 17:53:00 +0100
+Started GET "/ingredient/10" for ::1 at 2016-08-18 17:53:13 +0100
+  
+ActionController::RoutingError (uninitialized constant IngredientController):
+  
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `const_get'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:268:in `block in constantize'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `each'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `inject'
+activesupport (5.0.0.1) lib/active_support/inflector/methods.rb:266:in `constantize'
+actionpack (5.0.0.1) lib/action_dispatch/http/request.rb:93:in `controller_class'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:30:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (17.7ms)
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (6.4ms)
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (205.0ms)
+Started GET "/ingredient/10" for ::1 at 2016-08-18 17:53:40 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/ingredient/10"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered collection of /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (6.7ms)
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.3ms)
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (165.0ms)
+Started GET "/ingredient/10" for ::1 at 2016-08-18 17:54:44 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/ingredient/10"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered collection of /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (5.0ms)
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendering /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/boris/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (169.1ms)
+Started GET "/cocktails/2" for ::1 at 2016-08-18 17:54:50 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCocktail Load (0.8ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.4ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 2]]
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (1.3ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mIngredient Load (1.1ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (78.4ms)
+Completed 200 OK in 300ms (Views: 200.4ms | ActiveRecord: 25.6ms)
+
+
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/application.self-b8956bb6911355a06ada1d7a4570efabe807416009b185e47d51b483c388e264.css?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/cocktails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:54:50 +0100
+Started GET "/ingredients/10" for ::1 at 2016-08-18 17:54:52 +0100
+Processing by IngredientsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering ingredients/show.html.erb within layouts/application
+  [1m[36mCocktail Load (0.6ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails" INNER JOIN "doses" ON "cocktails"."id" = "doses"."cocktail_id" WHERE "doses"."ingredient_id" = $1[0m  [["ingredient_id", 10]]
+  Rendered ingredients/show.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 171ms (Views: 160.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/ingredients/10" for ::1 at 2016-08-18 17:55:03 +0100
+Processing by IngredientsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering ingredients/show.html.erb within layouts/application
+  [1m[36mCocktail Load (1.1ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails" INNER JOIN "doses" ON "cocktails"."id" = "doses"."cocktail_id" WHERE "doses"."ingredient_id" = $1[0m  [["ingredient_id", 10]]
+  Rendered ingredients/show.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 169ms (Views: 154.3ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/application.self-b8956bb6911355a06ada1d7a4570efabe807416009b185e47d51b483c388e264.css?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/cocktails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-18 17:55:04 +0100
+Started GET "/cocktails" for ::1 at 2016-08-18 17:55:14 +0100
+Processing by CocktailsController#index as HTML
+  Rendering cocktails/index.html.erb within layouts/application
+  [1m[36mCocktail Load (0.4ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails"[0m
+  Rendered cocktails/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 167ms (Views: 162.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cocktails/3" for ::1 at 2016-08-18 17:55:17 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCocktail Load (1.7ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (2.8ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 3]]
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 247ms (Views: 230.9ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/cocktails/12" for ::1 at 2016-08-18 17:55:35 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCocktail Load (0.6ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.4ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 12]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 166ms (Views: 156.0ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/cocktails/12/doses" for ::1 at 2016-08-18 17:55:45 +0100
+Processing by DosesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dvSUwt+Dc2k47vbDg+ZvTQgG9GBNEPOE5yW+W5mceE2lZlHx9hChb64fUhvBT1gIu8AFqhtVgSer6hzIzmNnOA==", "dose"=>{"description"=>"mainly", "ingredient_id"=>"10"}, "commit"=>"Add dose", "cocktail_id"=>"12"}
+  [1m[36mCocktail Load (1.1ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mDose Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "doses" WHERE "doses"."ingredient_id" = $1 AND "doses"."cocktail_id" = $2 LIMIT $3[0m  [["ingredient_id", 10], ["cocktail_id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "doses" ("description", "cocktail_id", "ingredient_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "mainly"], ["cocktail_id", 12], ["ingredient_id", 10], ["created_at", 2016-08-18 16:55:45 UTC], ["updated_at", 2016-08-18 16:55:45 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cocktails/12
+Completed 302 Found in 60ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/cocktails/12" for ::1 at 2016-08-18 17:55:45 +0100
+Processing by CocktailsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mCocktail Load (0.6ms)[0m  [1m[34mSELECT  "cocktails".* FROM "cocktails" WHERE "cocktails"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering cocktails/show.html.erb within layouts/application
+  [1m[36mDose Load (0.5ms)[0m  [1m[34mSELECT "doses".* FROM "doses" WHERE "doses"."cocktail_id" = $1[0m  [["cocktail_id", 12]]
+  [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  Rendered cocktails/show.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 259ms (Views: 246.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/ingredients/10" for ::1 at 2016-08-18 17:55:47 +0100
+Processing by IngredientsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mIngredient Load (0.8ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering ingredients/show.html.erb within layouts/application
+  [1m[36mCocktail Load (0.5ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails" INNER JOIN "doses" ON "cocktails"."id" = "doses"."cocktail_id" WHERE "doses"."ingredient_id" = $1[0m  [["ingredient_id", 10]]
+  Rendered ingredients/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 155ms (Views: 145.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/ingredients/10" for ::1 at 2016-08-18 18:00:59 +0100
+Processing by IngredientsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering ingredients/show.html.erb within layouts/application
+  [1m[36mCocktail Load (0.3ms)[0m  [1m[34mSELECT "cocktails".* FROM "cocktails" INNER JOIN "doses" ON "cocktails"."id" = "doses"."cocktail_id" WHERE "doses"."ingredient_id" = $1[0m  [["ingredient_id", 10]]
+  Rendered ingredients/show.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 89ms (Views: 72.3ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/assets/application.self-b8956bb6911355a06ada1d7a4570efabe807416009b185e47d51b483c388e264.css?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/transition.self-6ad2488465135ab731a045a8ebbe3ea2fc501aed286042496eda1664fdd07ba9.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/dropdown.self-561cca1cbaf67474e01e9536f106bad541594860a6df997004591c1c1957a147.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/alert.self-742145c5bb847aafdadc6e339be795628f8bc25f177e851f03a8c42278eb0312.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/carousel.self-e47323f363ceb3dc0bdbce05e36e709ed428e339833a41140a85cb0af24b8127.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/collapse.self-2eb697f62b587bb786ff940d82dd4be88cdeeaf13ca128e3da3850c5fcaec301.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/tab.self-5bf7078b682f8b131332eefa46b45fa5eff2eca745fc0d03e2991450888f7c28.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/modal.self-3e78617ade5663314b7ee0ea10375a5b34d59ffbade44939e3f2a4e4ef2019b3.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/popover.self-0aa93860b59fe7393f1dd490f54b3cb994f9d6155adffce034d4e14ae361b041.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/affix.self-6d6f1a7fc5c8aabf3547fa1b794fab6268f54bc55ad815e55873c71f52513517.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/cocktails.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/tooltip.self-05afb177e08f98997ccfc84fa08a215e4b27d48d5fe4d049080675e9dffd8199.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/scrollspy.self-969f3c5f48cdf1e439c7fa1154c13b948715f5c689f87837c0b64521d3b46ef6.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/doses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100
+Started GET "/assets/bootstrap/button.self-126ac9bf0e7f2d8568f8da3a00fd5f0fac6eae0946331003370161fbf8d7975e.js?body=1" for ::1 at 2016-08-18 18:00:59 +0100

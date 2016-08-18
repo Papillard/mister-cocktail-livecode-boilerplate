@@ -3,6 +3,33 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <h1><%= @cocktail.name %></h1>
       <%= link_to 'Back', cocktails_path %>
+
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <%= dose.description %> of <%= link_to dose.ingredient.name, ingredient_path(dose.ingredient) %>
+            (<%= link_to "delete", cocktail_dose_path(@cocktail, dose), method: :delete %>)
+          </li>
+        <% end %>
+      </ul>
+
+
+
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+
+        <% if @dose.errors.any? %>
+          <ul>
+          <% @dose.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        <% end %>
+
+        <%= f.input :description, placeholder: "2 teaspoons" %>
+        <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Choose one" %>
+
+        <%= f.submit "Add dose", class: "btn btn-primary"%>
+      <% end %>
     </div>
   </div>
 </div>
